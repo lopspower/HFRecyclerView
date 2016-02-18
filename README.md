@@ -7,10 +7,12 @@ HFRecyclerView
 
 This is an Android library allowing to add **Header** and/or **Footer** in your RecyclerView in the simplest way possible.
 
+<img src="/preview/preview.gif" alt="sample" title="sample" width="300" height="435" align="right" vspace="30" />
+
 USAGE
 -----
 
-To add Header and/or Footer in your RecyclerView you to add **HFRecyclerView** library in your project or you can also grab it via Gradle:
+To add Header and/or Footer in your RecyclerView you need to add **HFRecyclerView** library in your project or you can also grab it from Gradle:
 
 ```groovy
 compile 'com.mikhaellopez:hfrecyclerview:1.0.0'
@@ -19,14 +21,14 @@ compile 'com.mikhaellopez:hfrecyclerview:1.0.0'
 JAVA
 -----
 
-1. You need to create a custom `RecyclerView.Adapter` for your RecyclerView which `extends HFRecyclerView` your object type (in my example, my object type is `MyDataObject` :
+1. You need to create a custom `RecyclerView.Adapter` for your RecyclerView which `extends HFRecyclerView` with the object type of your choice (in my example, my object type is `MyDataObject` :
 
     ```java
     public class ExampleAdapter extends HFRecyclerView<MyDataObject> {
         //...
     }
     ```
-2. In your custom adapter, you need to add a constructor. The first param in `super`constructor is your data list. The second is a flag to determine if you want to add a header and the last, to add a third.
+2. In your custom adapter, you need to add a constructor. The first param in `super` constructor is your data list. The second is a flag to determine if you want to add a header and the last to add a footer.
  
     ```java
     public class ExampleAdapter extends HFRecyclerView<MyDataObject> {
