@@ -7,7 +7,7 @@ HFRecyclerView
 
 This is an Android library allowing to add **Header** and/or **Footer** in your RecyclerView in the simplest way possible.
 
-<img src="/preview/preview.gif" alt="sample" title="sample" width="300" height="435" align="right" vspace="30" />
+<img src="/preview/preview.gif" alt="sample" title="sample" width="300" height="435" align="right" vspace="20" />
 
 USAGE
 -----
