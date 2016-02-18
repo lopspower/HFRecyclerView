@@ -119,4 +119,4 @@ JAVA
 LICENCE
 -----
 
-CircularImageView by [Lopez Mikhael](http://mikhaellopez.com/) is licensed under a [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+CircularImageView by [Lopez Mikhael](http://mikhaellopez.com/) is licensed under a [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). Based on a work at [@hister](http://stackoverflow.com/a/26573338/1832221).
