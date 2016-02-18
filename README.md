@@ -28,7 +28,7 @@ JAVA
         //...
     }
     ```
-2. In your custom adapter, you need to add a constructor. The first param in `super` constructor is your data list. The second is a flag to determine if you want to add a header and the last to add a footer.
+2. In your custom adapter, add a constructor. The first param in `super` constructor is your data list. The second is a flag to determine if you want to add a header, and the last to add a footer.
  
     ```java
     public class ExampleAdapter extends HFRecyclerView<MyDataObject> {
@@ -41,7 +41,7 @@ JAVA
         //...
     }
     ```
-3. After that, you need to Override 3 methods and create 3 class which `extends RecyclerView.ViewHolder` to add the viewHolder for your Item, your Header and your Footer:
+3. After that, override 3 methods and create 3 class which extend `RecyclerView.ViewHolder` in order to add the viewHolder for your Item, your Header and your Footer:
 
     ```java
     public class ExampleAdapter extends HFRecyclerView<MyDataObject> {
@@ -90,7 +90,7 @@ JAVA
     }
     ```
 
-4. Finnaly, you must override the `onBindViewHolder` method to manage your views as you like:
+4. Finally, you must override `onBindViewHolder` method to manage your views as you like:
 
     ```java
     public class ExampleAdapter extends HFRecyclerView<MyDataObject> {
