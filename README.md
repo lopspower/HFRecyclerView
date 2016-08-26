@@ -117,6 +117,18 @@ JAVA
 
 :information_source: You can see a full example here : [**ExampleAdapter**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/ExampleAdapter.java) and [**MainActivity**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/MainActivity.java) 
 
+WARNING
+-----
+
+If you just want to add a margin at the top and/or bottom, this library isn't necessary. You can do like this:
+
+```java
+recyclerView.setLayoutManager(new LinearLayoutManager(...));
+int offsetPx = 10;
+recyclerView.addItemDecoration(new StartOffsetItemDecoration(offsetPx));
+recyclerView.addItemDecoration(new EndOffsetItemDecoration(offsetPx));
+```
+
 LICENCE
 -----
 
