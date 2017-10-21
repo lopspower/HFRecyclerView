@@ -2,7 +2,6 @@
     package="com.mikhaellopez.hfrecyclerview">
 
     <application
-        android:allowBackup="true"
         android:supportsRtl="true" />
 
 </manifest>
