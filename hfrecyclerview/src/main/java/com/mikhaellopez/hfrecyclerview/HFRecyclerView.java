@@ -77,4 +77,8 @@ public abstract class HFRecyclerView<T> extends RecyclerView.Adapter<RecyclerVie
     protected T getItem(int position) {
         return mWithHeader ? data.get(position - 1) : data.get(position);
     }
+
+    protected void updateData(List<T> newData) {
+        this.data = newData;
+    }
 }
