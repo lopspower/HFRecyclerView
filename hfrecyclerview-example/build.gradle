@@ -4,7 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion androidCompileSdkVersion
-
     defaultConfig {
         applicationId "com.mikhaellopez.hfrecyclerviewexample"
         minSdkVersion 17
@@ -21,8 +20,8 @@ android {
 }
 
 dependencies {
-    implementation project(':hfrecyclerview')
-    //implementation 'com.mikhaellopez:hfrecyclerview:1.1.0'
+    //implementation project(':hfrecyclerview')
+    implementation 'com.mikhaellopez:hfrecyclerview:1.1.1'
     implementation project(':hfrecyclerview-kotlin')
     //implementation 'com.mikhaellopez:hfrecyclerview-kotlin:1.1.0'
 
