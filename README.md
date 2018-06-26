@@ -119,7 +119,7 @@ JAVA
 
 https://github.com/lopspower/HFRecyclerView/blob/master/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/ExampleAdapter.java
 
-:information_source: You can see a full example here : [**ExampleAdapter**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/ExampleAdapter.java) and [**MainActivity**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/MainActivity.java) 
+:information_source: You can see a full example here : [**ExampleAdapter**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/ExampleAdapter.java) and [**MainActivity**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/MainActivity.java)
 
 LICENCE
 -----
