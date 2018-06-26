@@ -6,8 +6,9 @@ android {
     defaultConfig {
         minSdkVersion androidMinSdkVersion
         targetSdkVersion androidTargetSdkVersion
-        versionCode versionCode
-        versionName versionName
+        versionCode androidVersionCode
+        // This is the library version used when deploying the artifact
+        versionName androidVersionName
     }
     buildTypes {
         release {
