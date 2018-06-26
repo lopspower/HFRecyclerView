@@ -2,7 +2,6 @@ package com.mikhaellopez.hfrecyclerviewexample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -16,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Init RecyclerView
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
 
         // Init Data
         List<String> list = new ArrayList<>();
@@ -26,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Add Adapter
-        ExampleAdapter adapter = new ExampleAdapter(list);
+        ExampleAdapter adapter = new ExampleAdapter();
+        adapter.setData(list);
         recyclerView.setAdapter(adapter);
     }
 }

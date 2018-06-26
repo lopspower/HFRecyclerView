@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HFRecyclerView</string>
+    <string name="footer">Footer</string>
+    <string name="header">Header</string>
 </resources>

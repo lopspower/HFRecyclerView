@@ -1,5 +1,6 @@
 package com.mikhaellopez.hfrecyclerviewexample;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,24 +9,18 @@ import android.widget.TextView;
 
 import com.mikhaellopez.hfrecyclerview.HFRecyclerView;
 
-import java.util.List;
-
-/**
- * Created by mlopez on 16/02/16.
- */
 public class ExampleAdapter extends HFRecyclerView<String> {
 
-    public ExampleAdapter(List<String> data) {
+    public ExampleAdapter() {
         // With Header & With Footer
-        super(data, true, true);
+        super(true, true);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-            String data = getItem(position);
-            itemViewHolder.text.setText(data);
+            itemViewHolder.bind(getItem(position));
         } else if (holder instanceof HeaderViewHolder) {
 
         } else if (holder instanceof FooterViewHolder) {
@@ -54,22 +49,27 @@ public class ExampleAdapter extends HFRecyclerView<String> {
     class ItemViewHolder extends RecyclerView.ViewHolder {
         TextView text;
 
-        public ItemViewHolder(View itemView) {
+        ItemViewHolder(View itemView) {
             super(itemView);
-            text = (TextView)itemView.findViewById(R.id.text);
+            text = itemView.findViewById(R.id.text);
+        }
+
+        void bind(String item) {
+            text.setText(item);
         }
     }
 
     class HeaderViewHolder extends RecyclerView.ViewHolder {
-        public HeaderViewHolder(View itemView) {
+        HeaderViewHolder(View itemView) {
             super(itemView);
         }
     }
 
     class FooterViewHolder extends RecyclerView.ViewHolder {
-        public FooterViewHolder(View itemView) {
+        FooterViewHolder(View itemView) {
             super(itemView);
         }
     }
     //endregion
+
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -9,26 +9,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="16dp"
+        tools:ignore="UseCompoundDrawables">
 
-        <com.mikhaellopez.circularimageview.CircularImageView
+        <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:background="#888888"
             android:src="@drawable/ic_owl"
-            app:civ_border_color="#888888" />
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp" />
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="@tools:sample/lorem" />
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#dddddd" />
+        android:background="@color/divider" />
 
 </LinearLayout>

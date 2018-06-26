@@ -6,12 +6,11 @@ apply plugin: 'com.jfrog.bintray'
 version = "1.0.0"
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 27
 
     defaultConfig {
-        minSdkVersion 7
-        targetSdkVersion 23
+        minSdkVersion 14
+        targetSdkVersion 27
         versionCode 1
         versionName version
     }
@@ -28,7 +27,7 @@ def gitUrl = 'https://github.com/lopspower/HFRecyclerView.git'   // Git reposito
 group = "com.mikhaellopez"                                       // Maven Group ID for the artifact
 
 dependencies {
-    compile 'com.android.support:recyclerview-v7:23.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
 }
 
 install {
