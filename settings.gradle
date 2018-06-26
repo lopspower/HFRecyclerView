@@ -1,1 +1,1 @@
-include ':hfrecyclerview-example', ':hfrecyclerview'
+include ':hfrecyclerview-example', ':hfrecyclerview', ':hfrecyclerview-kotlin'

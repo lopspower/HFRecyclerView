@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion androidCompileSdkVersion
 
     defaultConfig {
         applicationId "com.mikhaellopez.hfrecyclerviewexample"
         minSdkVersion 17
-        targetSdkVersion 27
+        targetSdkVersion androidTargetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -19,8 +21,12 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation project(':hfrecyclerview')
-    //compile 'com.mikhaellopez:hfrecyclerview:1.0.0'
+    //implementation 'com.mikhaellopez:hfrecyclerview:1.1.0'
+    implementation project(':hfrecyclerview-kotlin')
+    //implementation 'com.mikhaellopez:hfrecyclerview-kotlin:1.1.0'
+
+    implementation appCompat
+    implementation recyclerView
+    implementation kotlinstdlib
 }

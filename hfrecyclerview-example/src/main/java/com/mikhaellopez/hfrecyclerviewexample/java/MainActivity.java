@@ -1,8 +1,10 @@
-package com.mikhaellopez.hfrecyclerviewexample;
+package com.mikhaellopez.hfrecyclerviewexample.java;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+
+import com.mikhaellopez.hfrecyclerviewexample.R;
 
 import java.util.ArrayList;
 import java.util.List;

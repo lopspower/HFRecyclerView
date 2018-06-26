@@ -1,4 +1,4 @@
-package com.mikhaellopez.hfrecyclerviewexample;
+package com.mikhaellopez.hfrecyclerviewexample.java;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.mikhaellopez.hfrecyclerview.HFRecyclerView;
+import com.mikhaellopez.hfrecyclerviewexample.R;
 
 public class ExampleAdapter extends HFRecyclerView<String> {
 
@@ -60,14 +61,14 @@ public class ExampleAdapter extends HFRecyclerView<String> {
     }
 
     class HeaderViewHolder extends RecyclerView.ViewHolder {
-        HeaderViewHolder(View itemView) {
-            super(itemView);
+        HeaderViewHolder(View view) {
+            super(view);
         }
     }
 
     class FooterViewHolder extends RecyclerView.ViewHolder {
-        FooterViewHolder(View itemView) {
-            super(itemView);
+        FooterViewHolder(View view) {
+            super(view);
         }
     }
     //endregion

@@ -58,25 +58,22 @@ public abstract class HFRecyclerView<T> extends RecyclerView.Adapter<RecyclerVie
         } else if (viewType == TYPE_FOOTER) {
             return getFooterView(inflater, parent);
         }
-        throw new RuntimeException("there is no type that matches the type " + viewType + " make sure your using types correctly");
+        throw new RuntimeException("there is no type that matches the type " + viewType + " + " +
+                "make sure your using types correctly");
     }
 
     @Override
     public int getItemCount() {
-        int itemCount = data.size();
-        if (withHeader)
-            itemCount++;
-        if (withFooter)
-            itemCount++;
+        int itemCount = getRealItemCount();
+        if (withHeader) itemCount++;
+        if (withFooter) itemCount++;
         return itemCount;
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (withHeader && isPositionHeader(position))
-            return TYPE_HEADER;
-        if (withFooter && isPositionFooter(position))
-            return TYPE_FOOTER;
+        if (withHeader && isPositionHeader(position)) return TYPE_HEADER;
+        if (withFooter && isPositionFooter(position)) return TYPE_FOOTER;
         return TYPE_ITEM;
     }
 
@@ -88,7 +85,7 @@ public abstract class HFRecyclerView<T> extends RecyclerView.Adapter<RecyclerVie
         return position == getItemCount() - 1;
     }
 
-    protected T getItem(int position) {
-        return withHeader ? data.get(position - 1) : data.get(position);
-    }
+    protected int getRealItemCount() { return data.size(); }
+
+    protected T getItem(int position) { return withHeader ? data.get(position - 1) : data.get(position); }
 }

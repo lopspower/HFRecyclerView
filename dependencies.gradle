@@ -1,0 +1,27 @@
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+ext {
+    // APP VERSION
+    androidVersionCode          = 1
+    androidVersionName          = '1.1.0'
+
+    // ANDROID VERSION
+    androidCompileSdkVersion    = 27
+    androidMinSdkVersion        = 14
+    androidTargetSdkVersion     = 27
+
+    // ANDROID LIB
+    supportLibVersion           = '27.1.1'
+    appCompat                   = "com.android.support:appcompat-v7:$supportLibVersion"
+    recyclerView                = "com.android.support:recyclerview-v7:$supportLibVersion"
+
+    // KOTLIN
+    kotlinstdlib                = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+}
