@@ -16,7 +16,7 @@ USAGE
 To add Header and/or Footer in your RecyclerView you need to add **HFRecyclerView** library in your project or you can also grab it from Gradle:
 
 ```groovy
-compile 'com.mikhaellopez:hfrecyclerview:1.0.0'
+compile 'com.mikhaellopez:hfrecyclerview:1.1.1'
 ```
 
 JAVA
@@ -34,9 +34,9 @@ JAVA
     ```java
     public class ExampleAdapter extends HFRecyclerView<MyDataObject> {
     
-        public ExampleAdapter(List<MyDataObject> data) {
+        public ExampleAdapter() {
             // With Header & With Footer
-            super(data, true, true);
+            super(true, true);
         }
     
         //...
@@ -65,25 +65,28 @@ JAVA
             return new FooterViewHolder(inflater.inflate(R.layout.item_footer, parent, false));
         }
         //endregion
-
         //region ViewHolder Header and Footer
         class ItemViewHolder extends RecyclerView.ViewHolder {
             TextView text;
 
-            public ItemViewHolder(View itemView) {
+            ItemViewHolder(View itemView) {
                 super(itemView);
                 text = (TextView)itemView.findViewById(R.id.text);
+            }
+            
+            void bind(MyDataObject item) {
+                text.setText(item.value());
             }
         }
 
         class HeaderViewHolder extends RecyclerView.ViewHolder {
-            public HeaderViewHolder(View itemView) {
+            HeaderViewHolder(View itemView) {
                 super(itemView);
             }
         }
 
         class FooterViewHolder extends RecyclerView.ViewHolder {
-            public FooterViewHolder(View itemView) {
+            FooterViewHolder(View itemView) {
                 super(itemView);
             }
         }
@@ -99,11 +102,10 @@ JAVA
         //...
     
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
             if (holder instanceof ItemViewHolder) {
                 ItemViewHolder itemViewHolder = (ItemViewHolder) holder;
-                MyDataObject data = getItem(position);
-                itemViewHolder.text.setText(data);
+                itemViewHolder.bind(getItem(position));
             } else if (holder instanceof HeaderViewHolder) {
 
             } else if (holder instanceof FooterViewHolder) {
@@ -115,7 +117,9 @@ JAVA
     }
     ```
 
-:information_source: You can see a full example here : [**ExampleAdapter**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/ExampleAdapter.java) and [**MainActivity**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/MainActivity.java) 
+https://github.com/lopspower/HFRecyclerView/blob/master/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/ExampleAdapter.java
+
+:information_source: You can see a full example here : [**ExampleAdapter**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/ExampleAdapter.java) and [**MainActivity**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/MainActivity.java) 
 
 LICENCE
 -----
