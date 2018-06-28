@@ -19,17 +19,102 @@ To add Header and/or Footer in your RecyclerView you need to add **HFRecyclerVie
 implementation 'com.mikhaellopez:hfrecyclerview:1.1.1'
 ```
 
+or **KOTLIN** version
+
+```groovy
+implementation 'com.mikhaellopez:hfrecyclerview-kotlin:1.1.1'
+```
+
+KOTLIN
+-----
+
+1. You need to create a custom `RecyclerView.Adapter` for your RecyclerView which `HFRecyclerView` with the object type of your choice (in my example, my object type is `MyDataObject`). The first param in `HFRecyclerView` constructor is a flag to determine if you want to add a header, and the last to add a footer.
+
+    ```kotlin
+    class ExampleAdapter : HFRecyclerView<MyDataObject>(true, true) {
+        //...
+    }
+    ```
+2. After that, override 3 methods and create 3 class which extend `RecyclerView.ViewHolder` in order to add the viewHolder for your Item, your Header and your Footer:
+
+    ```kotlin
+    class ExampleAdapter : HFRecyclerView<MyDataObject>(true, true) {
+        
+        //...
+        
+        //region Override Get ViewHolder
+        override fun getItemView(inflater: LayoutInflater, parent: ViewGroup): RecyclerView.ViewHolder =
+                ViewHolder.ItemViewHolder(inflater.inflate(R.layout.item_example, parent, false))
+
+        override fun getHeaderView(inflater: LayoutInflater, parent: ViewGroup): RecyclerView.ViewHolder =
+                ViewHolder.HeaderViewHolder(inflater.inflate(R.layout.item_header, parent, false))
+
+        override fun getFooterView(inflater: LayoutInflater, parent: ViewGroup): RecyclerView.ViewHolder =
+                ViewHolder.FooterViewHolder(inflater.inflate(R.layout.item_footer, parent, false))
+        //endregion
+        
+        //region ViewHolder Header and Footer
+        sealed class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+            class ItemViewHolder(view: View) : ViewHolder(view) {
+                fun bind(item: String) {
+                    itemView.run { text.text = item }
+                }
+            }
+
+            class HeaderViewHolder(view: View) : ViewHolder(view)
+
+            class FooterViewHolder(view: View) : ViewHolder(view)
+        }
+        //endregion
+    }
+    ```
+    
+    :information_source: If you doesn't have a footer (same for header) you need to override `getFooterView` like this:
+
+    ```kotlin
+    override fun getFooterView(inflater: LayoutInflater, parent: ViewGroup): RecyclerView.ViewHolder? = null
+    ```
+
+3. You must override `onBindViewHolder` method to manage your views as you like:
+
+    ```kotlin
+    class ExampleAdapter : HFRecyclerView<MyDataObject>(true, true) {
+    
+        //...
+    
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+            when (holder) {
+                is ViewHolder.ItemViewHolder -> holder.bind(getItem(position))
+                is ViewHolder.HeaderViewHolder -> { }
+                is ViewHolder.FooterViewHolder -> { }
+            }
+        }
+        
+        //...
+    }
+    ```
+4. Finally, you can used your adapter and set yout data like this:
+
+    ```kotlin
+    val adapter = ExampleAdapter()
+    adapter.data = youtDataList
+    recyclerview.adapter = adapter
+    ```
+
+:information_source: You can see a full example here : [**ExampleAdapter**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/kotlin/ExampleAdapter.kt) and [**MainActivity**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/kotlin/MainActivity.kt)
+
 JAVA
 -----
 
-1. You need to create a custom `RecyclerView.Adapter` for your RecyclerView which `extends HFRecyclerView` with the object type of your choice (in my example, my object type is `MyDataObject` :
+1. You need to create a custom `RecyclerView.Adapter` for your RecyclerView which `extends HFRecyclerView` with the object type of your choice (in my example, my object type is `MyDataObject`) :
 
     ```java
     public class ExampleAdapter extends HFRecyclerView<MyDataObject> {
         //...
     }
     ```
-2. In your custom adapter, add a constructor. The first param in `super` constructor is your data list. The second is a flag to determine if you want to add a header, and the last to add a footer.
+2. In your custom adapter, add a constructor. The first param in `super` constructor is a flag to determine if you want to add a header, and the second is a flag to add a footer. You can also used an other `super` constructor with your data list in first param.
  
     ```java
     public class ExampleAdapter extends HFRecyclerView<MyDataObject> {
@@ -42,6 +127,7 @@ JAVA
         //...
     }
     ```
+    
 3. After that, override 3 methods and create 3 class which extend `RecyclerView.ViewHolder` in order to add the viewHolder for your Item, your Header and your Footer:
 
     ```java
@@ -65,6 +151,7 @@ JAVA
             return new FooterViewHolder(inflater.inflate(R.layout.item_footer, parent, false));
         }
         //endregion
+        
         //region ViewHolder Header and Footer
         class ItemViewHolder extends RecyclerView.ViewHolder {
             TextView text;
@@ -94,7 +181,7 @@ JAVA
     }
     ```
 
-4. Finally, you must override `onBindViewHolder` method to manage your views as you like:
+4. You must override `onBindViewHolder` method to manage your views as you like:
 
     ```java
     public class ExampleAdapter extends HFRecyclerView<MyDataObject> {
@@ -116,8 +203,14 @@ JAVA
         //...
     }
     ```
+    
+5. Finally, you can used your adapter and set yout data like this:
 
-https://github.com/lopspower/HFRecyclerView/blob/master/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/ExampleAdapter.java
+    ```java
+    ExampleAdapter adapter = new ExampleAdapter();
+    adapter.setData(youtDataList);
+    recyclerView.setAdapter(adapter);
+    ```
 
 :information_source: You can see a full example here : [**ExampleAdapter**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/ExampleAdapter.java) and [**MainActivity**](/hfrecyclerview-example/src/main/java/com/mikhaellopez/hfrecyclerviewexample/java/MainActivity.java)
 
