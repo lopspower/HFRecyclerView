@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Copyright (C) 2016 Mikhael LOPEZ
+ * Copyright (C) 2018 Mikhael LOPEZ
  * Licensed under the Apache License Version 2.0
  */
 public abstract class HFRecyclerView<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

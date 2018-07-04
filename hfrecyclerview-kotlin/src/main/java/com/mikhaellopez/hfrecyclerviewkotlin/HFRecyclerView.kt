@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import java.util.Collections.emptyList
 
 /**
- * Copyright (C) 2016 Mikhael LOPEZ
+ * Copyright (C) 2018 Mikhael LOPEZ
  * Licensed under the Apache License Version 2.0
  */
 abstract class HFRecyclerView<T>(private val withHeader: Boolean, private val withFooter: Boolean)
