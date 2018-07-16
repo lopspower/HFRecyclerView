@@ -22,21 +22,29 @@ dependencies {
     implementation recyclerView
 }
 
-//region PUBLISH TO JCENTER & MAVEN CENTRAL
+//region Publish to jCenter
+def libGroupId = 'com.mikhaellopez'
+def libArtifactId = 'hfrecyclerview'
+def libVersion = androidVersionName
+def libDesc = 'Add Header and/or Footer in your RecyclerView in the simplest way possible.'
+def libLicenses = ['Apache-2.0']
+def libVCSUrl = 'https://github.com/lopspower/HFRecyclerView.git'
+
+// Generate Source Jar
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier "sources"
 }
 
-// Create the publication with the pom configuration:
+// Create the publication with the pom configuration
 publishing {
     publications {
         MyPublication(MavenPublication) {
-            groupId 'com.mikhaellopez'
-            artifactId 'hfrecyclerview'
-            version androidVersionName
+            groupId libGroupId
+            artifactId libArtifactId
+            version libVersion
             artifact(sourceJar)
-            artifact("$buildDir/outputs/aar/hfrecyclerview-release.aar")
+            artifact("$buildDir/outputs/aar/$libArtifactId-release.aar")
         }
     }
 }
@@ -51,13 +59,13 @@ bintray {
     publications = ['MyPublication']
     pkg {
         repo = "maven"
-        name = "com.mikhaellopez:hfrecyclerview"
-        desc = 'Add Header and/or Footer in your RecyclerView in the simplest way possible.'
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/lopspower/HFRecyclerView.git'
+        name = "$libGroupId:$libArtifactId"
+        desc = libDesc
+        licenses = libLicenses
+        vcsUrl = libVCSUrl
         version {
-            name = androidVersionName
-            vcsTag = androidVersionName
+            name = libVersion
+            vcsTag = libVersion
             released = new Date()
         }
     }
