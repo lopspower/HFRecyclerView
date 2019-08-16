@@ -140,18 +140,19 @@ JAVA
         //...
         
         //region Override Get ViewHolder
+        @NotNull
         @Override
-        protected RecyclerView.ViewHolder getItemView(LayoutInflater inflater, ViewGroup parent) {
+        protected RecyclerView.ViewHolder getItemView(@NotNull LayoutInflater inflater, @NotNull ViewGroup parent) {
             return new ItemViewHolder(inflater.inflate(R.layout.item_example, parent, false));
         }
 
         @Override
-        protected RecyclerView.ViewHolder getHeaderView(LayoutInflater inflater, ViewGroup parent) {
+        protected RecyclerView.ViewHolder getHeaderView(@NotNull LayoutInflater inflater, @NotNull ViewGroup parent) {
             return new HeaderViewHolder(inflater.inflate(R.layout.item_header, parent, false));
         }
 
         @Override
-        protected RecyclerView.ViewHolder getFooterView(LayoutInflater inflater, ViewGroup parent) {
+        protected RecyclerView.ViewHolder getFooterView(@NotNull LayoutInflater inflater, @NotNull ViewGroup parent) {
             return new FooterViewHolder(inflater.inflate(R.layout.item_footer, parent, false));
         }
         //endregion
