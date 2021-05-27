@@ -20,7 +20,7 @@ USAGE
 To add Header and/or Footer in your RecyclerView you need to add **HFRecyclerView** library in your project or you can also grab it from Gradle:
 
 ```groovy
-implementation 'io.mikhaellopez:hfrecyclerview:1.1.1'
+implementation 'com.mikhaellopez:hfrecyclerview:1.2.0'
 ```
 
 KOTLIN
