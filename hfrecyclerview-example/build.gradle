@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion androidCompileSdkVersion
@@ -14,16 +13,13 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
     implementation project(':hfrecyclerview')
-    //implementation 'com.mikhaellopez:hfrecyclerview:1.1.1'
-    implementation project(':hfrecyclerview-kotlin')
-    //implementation 'com.mikhaellopez:hfrecyclerview-kotlin:1.1.1'
+    //implementation 'com.mikhaellopez:hfrecyclerview:1.2.0'
 
     implementation androidXAppCompat
     implementation androidXRecyclerView

@@ -1,9 +1,8 @@
-package com.mikhaellopez.hfrecyclerviewexample.kotlin
+package com.mikhaellopez.hfrecyclerviewexample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.mikhaellopez.hfrecyclerviewexample.R
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         // Add Adapter
         val adapter = ExampleAdapter()
         adapter.data = list
-        recyclerview.adapter = adapter
+        findViewById<RecyclerView>(R.id.recyclerview).adapter = adapter
     }
 
 }

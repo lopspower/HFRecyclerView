@@ -1,15 +1,15 @@
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        jcenter()
     }
 }
 
 ext {
     // APP VERSION
-    androidVersionCode          = 2
-    androidVersionName          = '1.1.1'
+    androidVersionCode          = 3
+    androidVersionName          = '1.2.0'
 
     // ANDROID VERSION
     androidCompileSdkVersion    = 30
@@ -22,5 +22,4 @@ ext {
 
     // KOTLIN
     kotlinstdlib                = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
 }

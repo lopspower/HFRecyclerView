@@ -5,15 +5,22 @@ buildscript {
     ext.kotlin_version = '1.5.10'
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.1'
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    groupId = "io.mikhaellopez"
+    artifactId = "hfrecyclerview"
+    libraryVersion = "1.2.0"
 }

@@ -1,4 +1,4 @@
-package com.mikhaellopez.hfrecyclerviewkotlin
+package com.mikhaellopez.hfrecyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
