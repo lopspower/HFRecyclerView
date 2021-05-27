@@ -1,7 +1,7 @@
 package com.mikhaellopez.hfrecyclerviewexample.kotlin
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.mikhaellopez.hfrecyclerviewexample.R
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*

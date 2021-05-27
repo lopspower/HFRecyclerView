@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    implementation recyclerView
+    implementation androidXRecyclerView
 }
 
 //region Publish to jCenter

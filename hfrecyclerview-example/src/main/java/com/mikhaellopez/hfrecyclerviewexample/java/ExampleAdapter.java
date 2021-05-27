@@ -1,14 +1,17 @@
 package com.mikhaellopez.hfrecyclerviewexample.java;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.mikhaellopez.hfrecyclerview.HFRecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.mikhaellopez.hfrecyclerviewexample.R;
+import com.mikhaellopez.hfrecyclerviewkotlin.HFRecyclerView;
+
+import org.jetbrains.annotations.NotNull;
 
 public class ExampleAdapter extends HFRecyclerView<String> {
 
@@ -30,24 +33,25 @@ public class ExampleAdapter extends HFRecyclerView<String> {
     }
 
     //region Override Get ViewHolder
+    @NotNull
     @Override
-    protected RecyclerView.ViewHolder getItemView(LayoutInflater inflater, ViewGroup parent) {
+    protected RecyclerView.ViewHolder getItemView(LayoutInflater inflater, @NotNull ViewGroup parent) {
         return new ItemViewHolder(inflater.inflate(R.layout.item_example, parent, false));
     }
 
     @Override
-    protected RecyclerView.ViewHolder getHeaderView(LayoutInflater inflater, ViewGroup parent) {
+    protected RecyclerView.ViewHolder getHeaderView(LayoutInflater inflater, @NotNull ViewGroup parent) {
         return new HeaderViewHolder(inflater.inflate(R.layout.item_header, parent, false));
     }
 
     @Override
-    protected RecyclerView.ViewHolder getFooterView(LayoutInflater inflater, ViewGroup parent) {
+    protected RecyclerView.ViewHolder getFooterView(LayoutInflater inflater, @NotNull ViewGroup parent) {
         return new FooterViewHolder(inflater.inflate(R.layout.item_footer, parent, false));
     }
     //endregion
 
     //region ViewHolder Header and Footer
-    class ItemViewHolder extends RecyclerView.ViewHolder {
+    static class ItemViewHolder extends RecyclerView.ViewHolder {
         TextView text;
 
         ItemViewHolder(View itemView) {
@@ -60,13 +64,13 @@ public class ExampleAdapter extends HFRecyclerView<String> {
         }
     }
 
-    class HeaderViewHolder extends RecyclerView.ViewHolder {
+    static class HeaderViewHolder extends RecyclerView.ViewHolder {
         HeaderViewHolder(View view) {
             super(view);
         }
     }
 
-    class FooterViewHolder extends RecyclerView.ViewHolder {
+    static class FooterViewHolder extends RecyclerView.ViewHolder {
         FooterViewHolder(View view) {
             super(view);
         }

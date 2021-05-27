@@ -1,9 +1,9 @@
 package com.mikhaellopez.hfrecyclerviewexample.kotlin
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.mikhaellopez.hfrecyclerviewexample.R
 import com.mikhaellopez.hfrecyclerviewkotlin.HFRecyclerView
 import kotlinx.android.synthetic.main.item_example.view.*

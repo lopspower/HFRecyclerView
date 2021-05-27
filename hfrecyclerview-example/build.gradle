@@ -20,12 +20,12 @@ android {
 }
 
 dependencies {
-    //implementation project(':hfrecyclerview')
-    implementation 'com.mikhaellopez:hfrecyclerview:1.1.1'
-    //implementation project(':hfrecyclerview-kotlin')
-    implementation 'com.mikhaellopez:hfrecyclerview-kotlin:1.1.1'
+    implementation project(':hfrecyclerview')
+    //implementation 'com.mikhaellopez:hfrecyclerview:1.1.1'
+    implementation project(':hfrecyclerview-kotlin')
+    //implementation 'com.mikhaellopez:hfrecyclerview-kotlin:1.1.1'
 
-    implementation appCompat
-    implementation recyclerView
+    implementation androidXAppCompat
+    implementation androidXRecyclerView
     implementation kotlinstdlib
 }
