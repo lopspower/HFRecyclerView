@@ -18,8 +18,8 @@ android {
 }
 
 dependencies {
-    implementation project(':hfrecyclerview')
-    //implementation 'com.mikhaellopez:hfrecyclerview:1.2.0'
+    //implementation project(':hfrecyclerview')
+    implementation 'com.mikhaellopez:hfrecyclerview:1.2.0'
 
     implementation androidXAppCompat
     implementation androidXRecyclerView

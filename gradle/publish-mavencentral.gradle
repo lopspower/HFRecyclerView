@@ -13,18 +13,18 @@ afterEvaluate {
                 from components.release
 
                 // You can then customize attributes of the publication as shown below.
-                groupId = rootProject.groupId
-                artifactId = rootProject.artifactId
-                version = rootProject.libraryVersion
+                groupId = libraryGroupId
+                artifactId = libraryArtifactId
+                version = libraryVersion
             }
             // Creates a Maven publication called “debug”.
             debug(MavenPublication) {
                 // Applies the component for the debug build variant.
                 from components.debug
 
-                groupId = rootProject.groupId
-                artifactId = rootProject.artifactId
-                version = rootProject.libraryVersion
+                groupId = libraryGroupId
+                artifactId = libraryArtifactId
+                version = libraryVersion
             }
         }
     }
@@ -55,9 +55,9 @@ afterEvaluate {
                     description 'Add Header and/or Footer in your RecyclerView in the simplest way possible.'
                     url 'https://github.com/lopspower/HFRecyclerView'
 
-                    groupId = 'com.mikhaellopez'
-                    artifactId = 'hfrecyclerview'
-                    version = androidVersionName
+                    groupId = libraryGroupId
+                    artifactId = libraryArtifactId
+                    version = libraryVersion
 
                     scm {
                         connection 'scm:git:https://github.com/lopspower/HFRecyclerView'
@@ -91,6 +91,7 @@ afterEvaluate {
 
     signing {
         required { gradle.taskGraph.hasTask("uploadArchives") }
+
         sign configurations.archives
     }
 

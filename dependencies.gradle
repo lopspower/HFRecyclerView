@@ -10,6 +10,9 @@ ext {
     // APP VERSION
     androidVersionCode          = 3
     androidVersionName          = '1.2.0'
+    libraryGroupId              = 'com.mikhaellopez'
+    libraryArtifactId           = 'hfrecyclerview'
+    libraryVersion              = androidVersionName
 
     // ANDROID VERSION
     androidCompileSdkVersion    = 30
